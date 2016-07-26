@@ -1,7 +1,7 @@
 import codecs
 import struct
 
-# fix python 2/3 compatibility
+# python 2/3 compatibility
 try:
     _test_unichr_exists = unichr
 except NameError:
