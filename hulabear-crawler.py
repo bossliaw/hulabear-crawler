@@ -138,7 +138,7 @@ if __name__ == '__main__':
         big5txt = ''
         print('[DOING] crawl article {}'.format(i))
         tn.write(str(i) + '\r\r')
-        time.sleep(0.2)
+        time.sleep(0.05)
         big5txt = tn.read_very_eager()
 
         # 刪除沒清乾淨的文章列表
@@ -152,7 +152,7 @@ if __name__ == '__main__':
         while articleEndStr not in big5txt:
             print ('[DOING] crawl article {}: read line {}'.format(i,lineIdx))
             tn.write('\x1B[B')  # down
-            time.sleep(0.1)
+            time.sleep(0.05)
             line = tn.read_very_eager()
             big5txt += line
             utf8txt += strip_status_bar(line).decode('uao_decode', errors='ignore').replace(big5('\x1B[23;1H'), '')
