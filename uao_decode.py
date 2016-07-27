@@ -1,16 +1,16 @@
+# coding=utf-8
+
 import codecs
 import struct
+import sys
 
-# python 2/3 compatibility
-try:
-    _test_unichr_exists = unichr
-except NameError:
-    unichr = chr
+if float(sys.version[0:3]) > 2.7:
+    raise RuntimeError('only supports python 2.7')
 
 
 class Codec(codecs.Codec):
     def encode(self, input, errors='strict'):
-        pass
+        pass  # TODO: python3
 
     def decode(self, input, errors='strict'):
         unistr = u''
